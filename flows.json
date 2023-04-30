@@ -1,0 +1,598 @@
+[
+    {
+        "id": "885eb86603d6a096",
+        "type": "tab",
+        "label": "Flow 12",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "78b76ad84459fcba",
+        "type": "inject",
+        "z": "885eb86603d6a096",
+        "name": "Susu Hewani dan Telur",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "82f3c9492a4eb44d",
+                "dbfbc2fb226bb272",
+                "e971c18d74c4ce2a"
+            ]
+        ]
+    },
+    {
+        "id": "82f3c9492a4eb44d",
+        "type": "random",
+        "z": "885eb86603d6a096",
+        "name": "Temperature",
+        "low": "70",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "05801554097674b4",
+                "57c759ba3755fce1"
+            ]
+        ]
+    },
+    {
+        "id": "dbfbc2fb226bb272",
+        "type": "random",
+        "z": "885eb86603d6a096",
+        "name": "Humidity",
+        "low": "400",
+        "high": "800",
+        "inte": "true",
+        "property": "payload",
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "2458fcaa234657d7",
+                "e59f8207ca463150"
+            ]
+        ]
+    },
+    {
+        "id": "e971c18d74c4ce2a",
+        "type": "random",
+        "z": "885eb86603d6a096",
+        "name": "Pressure Sensor",
+        "low": "3000",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 490,
+        "y": 700,
+        "wires": [
+            [
+                "800da38d4b9e9e65",
+                "a1369b98d425e609"
+            ]
+        ]
+    },
+    {
+        "id": "05801554097674b4",
+        "type": "mqtt out",
+        "z": "885eb86603d6a096",
+        "name": "temp",
+        "topic": "susu/temp",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 730,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "57c759ba3755fce1",
+        "type": "debug",
+        "z": "885eb86603d6a096",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "2458fcaa234657d7",
+        "type": "debug",
+        "z": "885eb86603d6a096",
+        "name": "debug 52",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "800da38d4b9e9e65",
+        "type": "debug",
+        "z": "885eb86603d6a096",
+        "name": "debug 53",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "e59f8207ca463150",
+        "type": "mqtt out",
+        "z": "885eb86603d6a096",
+        "name": "Humid",
+        "topic": "susu/humid",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 730,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "a1369b98d425e609",
+        "type": "mqtt out",
+        "z": "885eb86603d6a096",
+        "name": "pressure",
+        "topic": "susu/pressure",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 740,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "02137a6a337c70e3",
+        "type": "inject",
+        "z": "885eb86603d6a096",
+        "name": "Susu Hewani dan Telur",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 820,
+        "wires": [
+            [
+                "ef2d8a9017c8f82e",
+                "2ce459ed400c4893",
+                "32d4e56e58c877de"
+            ]
+        ]
+    },
+    {
+        "id": "ef2d8a9017c8f82e",
+        "type": "random",
+        "z": "885eb86603d6a096",
+        "name": "Light",
+        "low": "70",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 490,
+        "y": 820,
+        "wires": [
+            [
+                "d1eb17069c9be81a",
+                "dc93571296a7733b"
+            ]
+        ]
+    },
+    {
+        "id": "2ce459ed400c4893",
+        "type": "random",
+        "z": "885eb86603d6a096",
+        "name": "Motion",
+        "low": "400",
+        "high": "800",
+        "inte": "true",
+        "property": "payload",
+        "x": 490,
+        "y": 940,
+        "wires": [
+            [
+                "3cf5c8a1e5c85c88",
+                "35727aedb226f2a0"
+            ]
+        ]
+    },
+    {
+        "id": "32d4e56e58c877de",
+        "type": "random",
+        "z": "885eb86603d6a096",
+        "name": "Accelerometer",
+        "low": "3000",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 480,
+        "y": 1060,
+        "wires": [
+            [
+                "1ca0a09149996f52",
+                "587cc71c231f6073"
+            ]
+        ]
+    },
+    {
+        "id": "d1eb17069c9be81a",
+        "type": "mqtt out",
+        "z": "885eb86603d6a096",
+        "name": "temp",
+        "topic": "susu/light",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 770,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "dc93571296a7733b",
+        "type": "debug",
+        "z": "885eb86603d6a096",
+        "name": "debug 54",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "3cf5c8a1e5c85c88",
+        "type": "debug",
+        "z": "885eb86603d6a096",
+        "name": "debug 55",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "1ca0a09149996f52",
+        "type": "debug",
+        "z": "885eb86603d6a096",
+        "name": "debug 56",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "35727aedb226f2a0",
+        "type": "mqtt out",
+        "z": "885eb86603d6a096",
+        "name": "Humid",
+        "topic": "susu/motion",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 790,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "587cc71c231f6073",
+        "type": "mqtt out",
+        "z": "885eb86603d6a096",
+        "name": "pressure",
+        "topic": "susu/accelerometer",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 820,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "033a9b2d1a070bc3",
+        "type": "inject",
+        "z": "885eb86603d6a096",
+        "name": "Susu Hewani dan Telur",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 1220,
+        "wires": [
+            [
+                "384f56e7b3e57796",
+                "8d82e8f576d20ad2",
+                "8ca2a9dbc7173905"
+            ]
+        ]
+    },
+    {
+        "id": "384f56e7b3e57796",
+        "type": "random",
+        "z": "885eb86603d6a096",
+        "name": "Gyroscope",
+        "low": "70",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 530,
+        "y": 1220,
+        "wires": [
+            [
+                "c7e94d9399cd419a",
+                "1455b6b223e31608"
+            ]
+        ]
+    },
+    {
+        "id": "8d82e8f576d20ad2",
+        "type": "random",
+        "z": "885eb86603d6a096",
+        "name": "Magnetometer",
+        "low": "400",
+        "high": "800",
+        "inte": "true",
+        "property": "payload",
+        "x": 540,
+        "y": 1340,
+        "wires": [
+            [
+                "13035823e1b0524e",
+                "a76e111eee21d06f"
+            ]
+        ]
+    },
+    {
+        "id": "8ca2a9dbc7173905",
+        "type": "random",
+        "z": "885eb86603d6a096",
+        "name": "Proximity",
+        "low": "3000",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 480,
+        "y": 1460,
+        "wires": [
+            [
+                "f7b1c58a314bb868",
+                "9bf10f5e2e4b6ea6"
+            ]
+        ]
+    },
+    {
+        "id": "c7e94d9399cd419a",
+        "type": "mqtt out",
+        "z": "885eb86603d6a096",
+        "name": "temp",
+        "topic": "susu/gyro",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 790,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "1455b6b223e31608",
+        "type": "debug",
+        "z": "885eb86603d6a096",
+        "name": "debug 57",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "13035823e1b0524e",
+        "type": "debug",
+        "z": "885eb86603d6a096",
+        "name": "debug 58",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "f7b1c58a314bb868",
+        "type": "debug",
+        "z": "885eb86603d6a096",
+        "name": "debug 59",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "a76e111eee21d06f",
+        "type": "mqtt out",
+        "z": "885eb86603d6a096",
+        "name": "Humid",
+        "topic": "susu/magnet",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 810,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "9bf10f5e2e4b6ea6",
+        "type": "mqtt out",
+        "z": "885eb86603d6a096",
+        "name": "proximity",
+        "topic": "susu/accelerometer",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 840,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "42f78dc81b1a3654",
+        "type": "mqtt-broker",
+        "name": "localhost",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

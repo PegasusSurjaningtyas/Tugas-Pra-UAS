@@ -1,0 +1,598 @@
+[
+    {
+        "id": "4e53103b5d61a5b6",
+        "type": "tab",
+        "label": "Flow 16",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ccec43b50d901719",
+        "type": "inject",
+        "z": "4e53103b5d61a5b6",
+        "name": "Restaurant",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 120,
+        "wires": [
+            [
+                "b495b279e7cf0c56",
+                "b0d9e98a7abeeb3d",
+                "aa7e23d897332e4b"
+            ]
+        ]
+    },
+    {
+        "id": "b495b279e7cf0c56",
+        "type": "random",
+        "z": "4e53103b5d61a5b6",
+        "name": "Turbidity sensor",
+        "low": "70",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 580,
+        "y": 120,
+        "wires": [
+            [
+                "27e72a86271f0d9c",
+                "f98b1129520e5fa7"
+            ]
+        ]
+    },
+    {
+        "id": "b0d9e98a7abeeb3d",
+        "type": "random",
+        "z": "4e53103b5d61a5b6",
+        "name": "Soil moisture sensor",
+        "low": "400",
+        "high": "800",
+        "inte": "true",
+        "property": "payload",
+        "x": 600,
+        "y": 240,
+        "wires": [
+            [
+                "6c434d61eaef7f56",
+                "24a0b5c993f32686"
+            ]
+        ]
+    },
+    {
+        "id": "aa7e23d897332e4b",
+        "type": "random",
+        "z": "4e53103b5d61a5b6",
+        "name": "Water level sensor",
+        "low": "3000",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 550,
+        "y": 360,
+        "wires": [
+            [
+                "35d9450ec00b30c5",
+                "47dfc770db989791"
+            ]
+        ]
+    },
+    {
+        "id": "27e72a86271f0d9c",
+        "type": "mqtt out",
+        "z": "4e53103b5d61a5b6",
+        "name": "Turbidity sensor",
+        "topic": "resto/TS",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 860,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f98b1129520e5fa7",
+        "type": "debug",
+        "z": "4e53103b5d61a5b6",
+        "name": "debug 69",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6c434d61eaef7f56",
+        "type": "debug",
+        "z": "4e53103b5d61a5b6",
+        "name": "debug 70",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "35d9450ec00b30c5",
+        "type": "debug",
+        "z": "4e53103b5d61a5b6",
+        "name": "debug 71",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "24a0b5c993f32686",
+        "type": "mqtt out",
+        "z": "4e53103b5d61a5b6",
+        "name": "soil",
+        "topic": "resto/soil",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 850,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "47dfc770db989791",
+        "type": "mqtt out",
+        "z": "4e53103b5d61a5b6",
+        "name": "water",
+        "topic": "plant/water",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 870,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "50db525306ea2c04",
+        "type": "inject",
+        "z": "4e53103b5d61a5b6",
+        "name": "Restaurant",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 500,
+        "wires": [
+            [
+                "10d369c490267b7a",
+                "51790993a07c0ae8",
+                "3651d3b3cb97fb5c"
+            ]
+        ]
+    },
+    {
+        "id": "10d369c490267b7a",
+        "type": "random",
+        "z": "4e53103b5d61a5b6",
+        "name": "Flow sensor",
+        "low": "70",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 570,
+        "y": 500,
+        "wires": [
+            [
+                "7905b77754f5f10f",
+                "9cd03e8b999a9b5a"
+            ]
+        ]
+    },
+    {
+        "id": "51790993a07c0ae8",
+        "type": "random",
+        "z": "4e53103b5d61a5b6",
+        "name": "Vibration sensor",
+        "low": "400",
+        "high": "800",
+        "inte": "true",
+        "property": "payload",
+        "x": 580,
+        "y": 620,
+        "wires": [
+            [
+                "9959c4acb00d0918",
+                "9b8a607920eceadd"
+            ]
+        ]
+    },
+    {
+        "id": "3651d3b3cb97fb5c",
+        "type": "random",
+        "z": "4e53103b5d61a5b6",
+        "name": "Sound sensor",
+        "low": "3000",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 540,
+        "y": 740,
+        "wires": [
+            [
+                "bc5f8243c78ce798",
+                "c46f8718149b4ca3"
+            ]
+        ]
+    },
+    {
+        "id": "7905b77754f5f10f",
+        "type": "mqtt out",
+        "z": "4e53103b5d61a5b6",
+        "name": "flow",
+        "topic": "resto/flow",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 830,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "9cd03e8b999a9b5a",
+        "type": "debug",
+        "z": "4e53103b5d61a5b6",
+        "name": "debug 72",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "9959c4acb00d0918",
+        "type": "debug",
+        "z": "4e53103b5d61a5b6",
+        "name": "debug 73",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "bc5f8243c78ce798",
+        "type": "debug",
+        "z": "4e53103b5d61a5b6",
+        "name": "debug 74",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "9b8a607920eceadd",
+        "type": "mqtt out",
+        "z": "4e53103b5d61a5b6",
+        "name": "vibration",
+        "topic": "resto/vibration",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 860,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "c46f8718149b4ca3",
+        "type": "mqtt out",
+        "z": "4e53103b5d61a5b6",
+        "name": "sound",
+        "topic": "plant/sound",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 870,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "a8564c6e236ba202",
+        "type": "inject",
+        "z": "4e53103b5d61a5b6",
+        "name": "Restaurant",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 900,
+        "wires": [
+            [
+                "efb01d511c700b85",
+                "ec1de1872d7a8eaf",
+                "ac63bc355fdce0ef"
+            ]
+        ]
+    },
+    {
+        "id": "efb01d511c700b85",
+        "type": "random",
+        "z": "4e53103b5d61a5b6",
+        "name": "Color sensor",
+        "low": "70",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 590,
+        "y": 900,
+        "wires": [
+            [
+                "e52a6eb9345dd32e",
+                "b8d48e17295d9719"
+            ]
+        ]
+    },
+    {
+        "id": "ec1de1872d7a8eaf",
+        "type": "random",
+        "z": "4e53103b5d61a5b6",
+        "name": "Magnetic field sensor",
+        "low": "400",
+        "high": "800",
+        "inte": "true",
+        "property": "payload",
+        "x": 620,
+        "y": 1020,
+        "wires": [
+            [
+                "bb251511b7511213",
+                "75de5429d22b521b"
+            ]
+        ]
+    },
+    {
+        "id": "ac63bc355fdce0ef",
+        "type": "random",
+        "z": "4e53103b5d61a5b6",
+        "name": "Radiation sensor",
+        "low": "3000",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 570,
+        "y": 1140,
+        "wires": [
+            [
+                "90b776f04cf83e52",
+                "5e9ca766222cfa0b"
+            ]
+        ]
+    },
+    {
+        "id": "e52a6eb9345dd32e",
+        "type": "mqtt out",
+        "z": "4e53103b5d61a5b6",
+        "name": "color",
+        "topic": "resto/color",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 850,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "b8d48e17295d9719",
+        "type": "debug",
+        "z": "4e53103b5d61a5b6",
+        "name": "debug 75",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "bb251511b7511213",
+        "type": "debug",
+        "z": "4e53103b5d61a5b6",
+        "name": "debug 76",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "90b776f04cf83e52",
+        "type": "debug",
+        "z": "4e53103b5d61a5b6",
+        "name": "debug 77",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "75de5429d22b521b",
+        "type": "mqtt out",
+        "z": "4e53103b5d61a5b6",
+        "name": "magnet",
+        "topic": "resto/magnet",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 880,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "5e9ca766222cfa0b",
+        "type": "mqtt out",
+        "z": "4e53103b5d61a5b6",
+        "name": "radiation",
+        "topic": "plant/radiation",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 900,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "42f78dc81b1a3654",
+        "type": "mqtt-broker",
+        "name": "localhost",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

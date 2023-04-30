@@ -1,0 +1,598 @@
+[
+    {
+        "id": "7557ecaa31f22311",
+        "type": "tab",
+        "label": "Flow 15",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cd0717b1e9aafcb1",
+        "type": "inject",
+        "z": "7557ecaa31f22311",
+        "name": "Plantation",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "8593367ba59380d7",
+                "c67e29f7945a7525",
+                "ce06e696bfac6ecf"
+            ]
+        ]
+    },
+    {
+        "id": "8593367ba59380d7",
+        "type": "random",
+        "z": "7557ecaa31f22311",
+        "name": "Infrared",
+        "low": "70",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 540,
+        "y": 120,
+        "wires": [
+            [
+                "57c7b7d5a6460ccb",
+                "9c1e1caa78801ef0"
+            ]
+        ]
+    },
+    {
+        "id": "c67e29f7945a7525",
+        "type": "random",
+        "z": "7557ecaa31f22311",
+        "name": "Ultrasonic",
+        "low": "400",
+        "high": "800",
+        "inte": "true",
+        "property": "payload",
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "322fe56f6283d92e",
+                "f428f05bba7a8a5c"
+            ]
+        ]
+    },
+    {
+        "id": "ce06e696bfac6ecf",
+        "type": "random",
+        "z": "7557ecaa31f22311",
+        "name": "Gas",
+        "low": "3000",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "c32c6679c7acfdf2",
+                "1b288e6a04c1b846"
+            ]
+        ]
+    },
+    {
+        "id": "57c7b7d5a6460ccb",
+        "type": "mqtt out",
+        "z": "7557ecaa31f22311",
+        "name": "infra",
+        "topic": "plant/infra",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 810,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9c1e1caa78801ef0",
+        "type": "debug",
+        "z": "7557ecaa31f22311",
+        "name": "debug 60",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "322fe56f6283d92e",
+        "type": "debug",
+        "z": "7557ecaa31f22311",
+        "name": "debug 61",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "c32c6679c7acfdf2",
+        "type": "debug",
+        "z": "7557ecaa31f22311",
+        "name": "debug 62",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "f428f05bba7a8a5c",
+        "type": "mqtt out",
+        "z": "7557ecaa31f22311",
+        "name": "ultra",
+        "topic": "plant/ultra",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 830,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1b288e6a04c1b846",
+        "type": "mqtt out",
+        "z": "7557ecaa31f22311",
+        "name": "gas",
+        "topic": "plant/gas",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 850,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "db02770529ad131b",
+        "type": "inject",
+        "z": "7557ecaa31f22311",
+        "name": "Plantation",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 500,
+        "wires": [
+            [
+                "f81ee3b20da5e5ed",
+                "01efa7b2d766afcf",
+                "16f1cfaf04281d28"
+            ]
+        ]
+    },
+    {
+        "id": "f81ee3b20da5e5ed",
+        "type": "random",
+        "z": "7557ecaa31f22311",
+        "name": "Smoke",
+        "low": "70",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 600,
+        "y": 500,
+        "wires": [
+            [
+                "b17d38b4b74f1573",
+                "57edfcdebfeeb747"
+            ]
+        ]
+    },
+    {
+        "id": "01efa7b2d766afcf",
+        "type": "random",
+        "z": "7557ecaa31f22311",
+        "name": "Carbon monoxide sensor",
+        "low": "400",
+        "high": "800",
+        "inte": "true",
+        "property": "payload",
+        "x": 650,
+        "y": 620,
+        "wires": [
+            [
+                "bd4489f876e3111c",
+                "2d0a04d98e63cd14"
+            ]
+        ]
+    },
+    {
+        "id": "16f1cfaf04281d28",
+        "type": "random",
+        "z": "7557ecaa31f22311",
+        "name": "Carbon dioxide sensor",
+        "low": "3000",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 600,
+        "y": 740,
+        "wires": [
+            [
+                "e9c59d18d99f76ff",
+                "4698f210269b2e42"
+            ]
+        ]
+    },
+    {
+        "id": "b17d38b4b74f1573",
+        "type": "mqtt out",
+        "z": "7557ecaa31f22311",
+        "name": "smoke",
+        "topic": "plant/smoke",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 870,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "57edfcdebfeeb747",
+        "type": "debug",
+        "z": "7557ecaa31f22311",
+        "name": "debug 63",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "bd4489f876e3111c",
+        "type": "debug",
+        "z": "7557ecaa31f22311",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "e9c59d18d99f76ff",
+        "type": "debug",
+        "z": "7557ecaa31f22311",
+        "name": "debug 65",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "2d0a04d98e63cd14",
+        "type": "mqtt out",
+        "z": "7557ecaa31f22311",
+        "name": "Carbon monoxide sensor",
+        "topic": "plant/CMO",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 950,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "4698f210269b2e42",
+        "type": "mqtt out",
+        "z": "7557ecaa31f22311",
+        "name": "co2",
+        "topic": "plant/co2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 910,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "fd64014acd830769",
+        "type": "inject",
+        "z": "7557ecaa31f22311",
+        "name": "Plantation",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 880,
+        "wires": [
+            [
+                "ec2644e561266a21",
+                "6db9555a0a8c2fed",
+                "e453a6cdc0fa0b7f"
+            ]
+        ]
+    },
+    {
+        "id": "ec2644e561266a21",
+        "type": "random",
+        "z": "7557ecaa31f22311",
+        "name": "pH sensor",
+        "low": "70",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 670,
+        "y": 880,
+        "wires": [
+            [
+                "dbb312de06cc837a",
+                "f5019316235f8a88"
+            ]
+        ]
+    },
+    {
+        "id": "6db9555a0a8c2fed",
+        "type": "random",
+        "z": "7557ecaa31f22311",
+        "name": "Conductivity sensor",
+        "low": "400",
+        "high": "800",
+        "inte": "true",
+        "property": "payload",
+        "x": 690,
+        "y": 1000,
+        "wires": [
+            [
+                "d6de18fbd21c279e",
+                "bf8d5f8fbf27267e"
+            ]
+        ]
+    },
+    {
+        "id": "e453a6cdc0fa0b7f",
+        "type": "random",
+        "z": "7557ecaa31f22311",
+        "name": "Dissolved oxygen sensor",
+        "low": "3000",
+        "high": "5000",
+        "inte": "true",
+        "property": "payload",
+        "x": 670,
+        "y": 1120,
+        "wires": [
+            [
+                "40b03f1410d937ae",
+                "71e4882ef0237afa"
+            ]
+        ]
+    },
+    {
+        "id": "dbb312de06cc837a",
+        "type": "mqtt out",
+        "z": "7557ecaa31f22311",
+        "name": "pH sensor",
+        "topic": "plant/ph",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 950,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "f5019316235f8a88",
+        "type": "debug",
+        "z": "7557ecaa31f22311",
+        "name": "debug 66",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "d6de18fbd21c279e",
+        "type": "debug",
+        "z": "7557ecaa31f22311",
+        "name": "debug 67",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "40b03f1410d937ae",
+        "type": "debug",
+        "z": "7557ecaa31f22311",
+        "name": "debug 68",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "bf8d5f8fbf27267e",
+        "type": "mqtt out",
+        "z": "7557ecaa31f22311",
+        "name": "conduct",
+        "topic": "plant/conduct",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 960,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "71e4882ef0237afa",
+        "type": "mqtt out",
+        "z": "7557ecaa31f22311",
+        "name": "DOS",
+        "topic": "plant/DOS",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42f78dc81b1a3654",
+        "x": 970,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "42f78dc81b1a3654",
+        "type": "mqtt-broker",
+        "name": "localhost",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
